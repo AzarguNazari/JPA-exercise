@@ -11,12 +11,10 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 @SpringBootApplication
 @RestController
@@ -65,10 +63,10 @@ public class JpaOneToOneDemoApplication implements ApplicationRunner {
 		userProfile1.setUser(user1);
 		userProfileRepository.save(userProfile1);
 
-		userProfileRepository.findAll().forEach(userProfile -> {
-			System.out.println(userProfile.getAddress1() + " " + userProfile.getAddress2());
-			System.out.println(userProfile.getUser().getFirstName() + " " + userProfile.getUser().getLastName());
-		});
+//		userProfileRepository.findAll().forEach(userProfile -> {
+//			System.out.println(userProfile.getAddress1() + " " + userProfile.getAddress2());
+//			System.out.println(userProfile.getUser().getFirstName() + " " + userProfile.getUser().getLastName());
+//		});
 
 	}
 }
