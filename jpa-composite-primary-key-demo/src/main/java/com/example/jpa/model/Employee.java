@@ -9,10 +9,10 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@Data
 @Entity
 @Table(name = "employees")
 @NoArgsConstructor
-@Data
 public class Employee {
 
     @EmbeddedId

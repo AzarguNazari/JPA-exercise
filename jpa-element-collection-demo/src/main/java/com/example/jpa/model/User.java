@@ -22,12 +22,12 @@ public class User {
     @Column(unique = true)
     private String email;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_phone_numbers", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "phone_number")
     private Set<String> phoneNumbers = new HashSet<>();
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_addresses", joinColumns = @JoinColumn(name = "user_id"))
     @AttributeOverrides({
             @AttributeOverride(name = "addressLine1", column = @Column(name = "house_number")),
