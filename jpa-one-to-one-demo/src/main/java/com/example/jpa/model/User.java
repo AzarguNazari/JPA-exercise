@@ -1,16 +1,11 @@
 package com.example.jpa.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by rajeevkumarsingh on 20/11/17.
- */
 @Entity
 @Table(name = "users")
 @Data

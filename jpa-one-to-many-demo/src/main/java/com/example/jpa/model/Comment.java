@@ -10,12 +10,9 @@ import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
-/**
- * Created by rajeevkumarsingh on 21/11/17.
- */
+@Data
 @Entity
 @Table(name = "comments")
-@Data
 public class Comment extends AuditModel {
 
     @Id
@@ -26,8 +23,8 @@ public class Comment extends AuditModel {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "post_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-    @JsonIdentityReference(alwaysAsId=true)
+    @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
+    @JsonIdentityReference(alwaysAsId = true)
     @JsonProperty("post_id")
     private Post post;
 }

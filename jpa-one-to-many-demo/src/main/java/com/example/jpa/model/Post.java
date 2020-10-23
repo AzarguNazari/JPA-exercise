@@ -4,9 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-/**
- * Created by rajeevkumarsingh on 21/11/17.
- */
 @Entity
 @Table(name = "posts")
 @Data

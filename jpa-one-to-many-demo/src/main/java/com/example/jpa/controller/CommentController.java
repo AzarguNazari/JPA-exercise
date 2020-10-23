@@ -5,10 +5,10 @@ import com.example.jpa.model.Comment;
 import com.example.jpa.repository.CommentRepository;
 import com.example.jpa.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class CommentController {
@@ -20,9 +20,8 @@ public class CommentController {
     private PostRepository postRepository;
 
     @GetMapping("/posts/{postId}/comments")
-    public Page<Comment> getAllCommentsByPostId(@PathVariable (value = "postId") Long postId,
-                                                Pageable pageable) {
-        return commentRepository.findByPostId(postId, pageable);
+    public List<Comment> getAllCommentsByPostId(@PathVariable (value = "postId") Long postId) {
+        return commentRepository.findByPostId(postId);
     }
 
     @PostMapping("/posts/{postId}/comments")
